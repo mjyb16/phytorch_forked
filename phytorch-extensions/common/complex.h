@@ -30,6 +30,6 @@ template <typename T> PHYTORCH_DEVICE T cnan() {
 
 DEF_COMPLEX_CHECK isfinite(complex<T> a) { return isfinite(a.real()) and isfinite(a.imag()); }
 
-DEF_COMPLEX_CHECK isnan(complex<T> a) { return isnan(a.real()) or isnan(a.imag()); }
+//DEF_COMPLEX_CHECK isnan(complex<T> a) { return isnan(a.real()) or isnan(a.imag()); }
 
 DEF_COMPLEX_CHECK isinf(complex<T> a) { return isinf(a.real()) or isinf(a.imag()); }
