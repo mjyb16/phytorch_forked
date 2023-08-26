@@ -3,7 +3,7 @@
 #define BOOST_PP_LIMIT_SEQ 256
 #define BOOST_PP_LIMIT_TUPLE 256
 
-#include "$GITHUB_WORKSPACE/boost/preprocessor.hpp"
+#include "$GITHUB_WORKSPACE/boost_1_83_0/preprocessor.hpp"
 
 #define stringify(a) #a
 #define STRINGIFY(a) stringify(a)
