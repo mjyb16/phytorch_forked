@@ -3,7 +3,7 @@
 #define BOOST_PP_LIMIT_SEQ 256
 #define BOOST_PP_LIMIT_TUPLE 256
 
-#include "caustic/boost/preprocessor.hpp"
+#include "boost/preprocessor.hpp"
 
 #define stringify(a) #a
 #define STRINGIFY(a) stringify(a)
