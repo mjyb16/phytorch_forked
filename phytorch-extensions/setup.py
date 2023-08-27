@@ -42,6 +42,6 @@ setup(
     name='phytorch.extensions',
     ext_modules=list(map(ext_from_folder, (
         'elliptic', 'roots', 'special'
-    )), cc_env),
+    ))) + [cc_env],
     cmdclass={'build_ext': BuildExtension}
 )
