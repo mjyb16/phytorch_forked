@@ -23,7 +23,7 @@ COMPLIER_ARGS = {
     'nvcc': ['--expt-relaxed-constexpr', '--extended-lambda',
              '-O2', '--relocatable-device-code=true',
              '--maxrregcount=128', '-std=c++17'],
-    'gcc': [gcc_env]
+    'gcc': [gcc_env],
     'msvc': ['/I D:\a\caustic\boost']
 }
 
