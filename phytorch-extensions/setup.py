@@ -9,9 +9,9 @@ from sys import platform
 os.environ['TORCH_SHOW_CPP_STACKTRACES'] = '1'
 
 if platform == "darwin":
-    gcc_env = "-I /home/runner/work/caustic/boost"
-else:
     gcc_env = "-I /Users/runner/work/caustic/boost"
+else:
+    gcc_env = "-I /home/runner/work/caustic/boost"
     
 
 use_cuda = torch.cuda.is_available()
