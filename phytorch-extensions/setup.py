@@ -9,9 +9,11 @@ from sys import platform
 os.environ['TORCH_SHOW_CPP_STACKTRACES'] = '1'
 
 if platform == "darwin":
-    gcc_env = "-I /Users/runner/work/caustic/boost"
+    cc_env = "/Users/runner/work/caustic/boost"
+elif platform == "linux":
+    cc_env = "/home/runner/work/caustic/boost"
 else:
-    gcc_env = "-I /home/runner/work/caustic/boost"
+    cc_env = "D:\a\caustic\boost"
     
 
 use_cuda = torch.cuda.is_available()
@@ -22,9 +24,7 @@ COMPLIER_ARGS = {
     'cxx': ['-Wno-unused-local-typedefs', '-std=c++17'] + (['-DPHYTORCH_CUDA'] if use_cuda else []),
     'nvcc': ['--expt-relaxed-constexpr', '--extended-lambda',
              '-O2', '--relocatable-device-code=true',
-             '--maxrregcount=128', '-std=c++17'],
-    'gcc': [gcc_env],
-    'msvc': ['/I D:\a\caustic\boost']
+             '--maxrregcount=128', '-std=c++17']
 }
 
 
@@ -42,6 +42,6 @@ setup(
     name='phytorch.extensions',
     ext_modules=list(map(ext_from_folder, (
         'elliptic', 'roots', 'special'
-    ))),
+    )), cc_env),
     cmdclass={'build_ext': BuildExtension}
 )
